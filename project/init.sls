@@ -9,5 +9,6 @@ src_dir:
     - name: pillar['checkout']['repo']
     - rev: pillar['checkout']['sha']
     - target: /usr/src/code
-    - require: file: src_dir
+    - require: 
+      - file: src_dir
     - runas: jspc
