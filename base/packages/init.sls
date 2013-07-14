@@ -1,2 +1,2 @@
 emacs:
-  - pkg.installed
+  pkg.installed

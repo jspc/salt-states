@@ -1,10 +1,10 @@
 jspc:
-  - user.present:
+  user.present:
     - shell: /bin/bash
     - home: /home/jspc
 
 ssh-dir:
-  - file.directory:
+  file.directory:
     - name: /home/jspc/.ssh
     - mode: 700
     - user: jspc
@@ -12,9 +12,9 @@ ssh-dir:
       - user: jspc
 
 priv:
-  - file.managed:
+  file.managed:
     - name: /home/jspc/.ssh/id_rsa
-    - source: salt://auth/jspc/files/id_rsa
+    - source: salt://common/auth/jspc/files/id_rsa
     - user: jspc
     - group: jspc
     - mode: 500
@@ -22,9 +22,9 @@ priv:
       - file: ssh-dir
 
 pub:
-  - file.managed
+  file.managed:
     - name: /home/jspc/ssh/id_rsa.pub
-    - source: salt://auth/jspc/files/id_rsa.pub
+    - source: salt://common/auth/jspc/files/id_rsa.pub
     - user: jspc
     - group: jspc
     - mode: 500
